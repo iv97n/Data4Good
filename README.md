@@ -19,3 +19,8 @@ These probabilities are linked to the coordinates of Berlin with latitude and lo
 
 Thanks to an API, we've created an interactive graphical interface that allows zooming to view areas with a higher probability of accidents at that moment.
 With this, we'll be able to redirect people/drivers when there's a certain risk of accidents.
+
+To be usable in real life, what we have done is create an architecture to make it a real-time system, meaning that data is sent periodically to be executed automatically. This ensures that citizens have up-to-date data and allows us to redirect traffic to reduce the likelihood of accidents. To do this, the structure is based on three sources of information: Police, Sensors, Weather. This is sent to a Kafka Data Broker which will send it to a node to execute Python scripts, the output will go to another Data Broker which will send the result that will be the input for the deep learning model, then this would be sent to another Kafka Data broker, which will send the data to another Python script to create a heatmap of accident probabilities in Berlin which will serve to improve the life of people in Berlin.
+
+Finally, we can see that this system allows us to make it scalable to large scales.
+
