@@ -13,7 +13,7 @@ sudo /opt/kafka/kafka-3.7.0-src/bin/kafka-topics.sh --create --bootstrap-server 
 sleep 5
 
 # Start the weather api
-python3 ./weather_api.py &
+python3 /home/iv97n/Documents/Data4Good/src/./weather_api.py &
 sleep 5
 
 # Start each of the processes realted to the data engineering process
